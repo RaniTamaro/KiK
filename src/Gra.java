@@ -1,8 +1,11 @@
 
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.UIManager;
 
 
 public class Gra extends javax.swing.JFrame {
@@ -21,20 +24,22 @@ public class Gra extends javax.swing.JFrame {
     static public ImageIcon imageX;
     static public ImageIcon imageO;
     public boolean krzyzyk = true;
-    public boolean isEnabled = true;
     
     private void akcja(JButton przycisk)
     {
-        
         if(krzyzyk)
         {
-            przycisk.setIcon(imageX);
+            przycisk.setDisabledIcon(imageX);
+            przycisk.setEnabled(false);
             krzyzyk=false;
+            przycisk.setName("X");
         }
         else
         {
-            przycisk.setIcon(imageO);
+            przycisk.setDisabledIcon(imageO);
+            przycisk.setEnabled(false);
             krzyzyk=true;
+            przycisk.setName("O");
         }
     }
     
@@ -63,6 +68,9 @@ public class Gra extends javax.swing.JFrame {
 
         PrzyciskA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
         PrzyciskA1.setToolTipText("");
+        PrzyciskA1.setDisabledIcon(null);
+        PrzyciskA1.setDisabledSelectedIcon(null);
+        PrzyciskA1.setName("?"); // NOI18N
         PrzyciskA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskA1ActionPerformed(evt);
@@ -71,6 +79,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 90, 100));
 
         PrzyciskB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskB1.setDisabledIcon(null);
+        PrzyciskB1.setDisabledSelectedIcon(null);
+        PrzyciskB1.setName("?"); // NOI18N
         PrzyciskB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskB1ActionPerformed(evt);
@@ -80,6 +91,9 @@ public class Gra extends javax.swing.JFrame {
 
         PrzyciskC1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
         PrzyciskC1.setActionCommand("");
+        PrzyciskC1.setDisabledIcon(null);
+        PrzyciskC1.setDisabledSelectedIcon(null);
+        PrzyciskC1.setName("?"); // NOI18N
         PrzyciskC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskC1ActionPerformed(evt);
@@ -88,6 +102,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 100));
 
         PrzyciskA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskA2.setDisabledIcon(null);
+        PrzyciskA2.setDisabledSelectedIcon(null);
+        PrzyciskA2.setName("?"); // NOI18N
         PrzyciskA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskA2ActionPerformed(evt);
@@ -96,6 +113,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 90, 100));
 
         PrzyciskB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskB2.setDisabledIcon(null);
+        PrzyciskB2.setDisabledSelectedIcon(null);
+        PrzyciskB2.setName("?"); // NOI18N
         PrzyciskB2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskB2ActionPerformed(evt);
@@ -104,6 +124,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 90, 100));
 
         PrzyciskC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskC2.setDisabledIcon(null);
+        PrzyciskC2.setDisabledSelectedIcon(null);
+        PrzyciskC2.setName("?"); // NOI18N
         PrzyciskC2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskC2ActionPerformed(evt);
@@ -112,6 +135,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 90, 100));
 
         PrzyciskA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskA3.setDisabledIcon(null);
+        PrzyciskA3.setDisabledSelectedIcon(null);
+        PrzyciskA3.setName("?"); // NOI18N
         PrzyciskA3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskA3ActionPerformed(evt);
@@ -120,6 +146,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 90, 100));
 
         PrzyciskB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskB3.setDisabledIcon(null);
+        PrzyciskB3.setDisabledSelectedIcon(null);
+        PrzyciskB3.setName("?"); // NOI18N
         PrzyciskB3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskB3ActionPerformed(evt);
@@ -128,6 +157,9 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(PrzyciskB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, 100));
 
         PrzyciskC3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pytajnik.png"))); // NOI18N
+        PrzyciskC3.setDisabledIcon(null);
+        PrzyciskC3.setDisabledSelectedIcon(null);
+        PrzyciskC3.setName("?"); // NOI18N
         PrzyciskC3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrzyciskC3ActionPerformed(evt);
@@ -144,15 +176,10 @@ public class Gra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrzyciskA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskA1ActionPerformed
-        if(isEnabled)
-        {
-            akcja(PrzyciskA1);
-            isEnabled=false;
-        }
+       akcja(PrzyciskA1);
     }//GEN-LAST:event_PrzyciskA1ActionPerformed
 
     private void PrzyciskC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskC1ActionPerformed
-        
         akcja(PrzyciskC1);
     }//GEN-LAST:event_PrzyciskC1ActionPerformed
 
@@ -161,27 +188,27 @@ public class Gra extends javax.swing.JFrame {
     }//GEN-LAST:event_PrzyciskB1ActionPerformed
 
     private void PrzyciskA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskA2ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskA2);
     }//GEN-LAST:event_PrzyciskA2ActionPerformed
 
     private void PrzyciskB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskB2ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskB2);
     }//GEN-LAST:event_PrzyciskB2ActionPerformed
 
     private void PrzyciskC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskC2ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskC2);
     }//GEN-LAST:event_PrzyciskC2ActionPerformed
 
     private void PrzyciskA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskA3ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskA3);
     }//GEN-LAST:event_PrzyciskA3ActionPerformed
 
     private void PrzyciskB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskB3ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskB3);
     }//GEN-LAST:event_PrzyciskB3ActionPerformed
 
     private void PrzyciskC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrzyciskC3ActionPerformed
-        // TODO add your handling code here:
+        akcja(PrzyciskC3);
     }//GEN-LAST:event_PrzyciskC3ActionPerformed
 
     /**
