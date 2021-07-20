@@ -7,13 +7,8 @@ public class Gra extends javax.swing.JFrame {
     
     public Gra() {
         initComponents();
-        int szer = Toolkit.getDefaultToolkit().getScreenSize().width;
-        int wys = Toolkit.getDefaultToolkit().getScreenSize().height;
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Ikona.png")));
         
-        int szerRamki = this.getSize().width;
-        int wysRamki = this.getSize().height;
-        
-        this.setLocation((szer - szerRamki)/2, (wys - wysRamki)/2);
     }
 
     
@@ -22,24 +17,37 @@ public class Gra extends javax.swing.JFrame {
     private void initComponents() {
 
         Tlo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kolko i Krzyzyk");
+        setMaximumSize(new java.awt.Dimension(600, 600));
+        setMinimumSize(new java.awt.Dimension(600, 600));
+        setResizable(false);
 
         Tlo.setIcon(new javax.swing.ImageIcon("C:\\Users\\klaku\\Desktop\\Kursy\\Programowanie\\Programy\\Własne\\Próby z zajęć\\Tworzenie Aplikacji\\KiK\\Tlo.png")); // NOI18N
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Tlo)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Tlo))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Tlo, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addGap(281, 281, 281))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -79,5 +87,6 @@ public class Gra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Tlo;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
